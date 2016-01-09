@@ -1,24 +1,20 @@
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class Day2 {
-
-    public static void main(String[] args) {
     
-      Scanner sc = new Scanner(System.in);
-      double M = sc.nextDouble(); // original meal price
-      int T = sc.nextInt(); // tip percentage
-      int X = sc.nextInt(); // tax percentage
+    public static void main(String[] args) {
         
-      sc.close();
-      
-      double price = M + ((double)T/100 * M) + ((double)X/100 * M);
-      
-      int total = (int) Math.round(price);
-      
-      System.out.println("The final price of the meal is $" + total + "."); 
+        Scanner sc = new Scanner(System.in);
+        double mealPrice = sc.nextDouble();
+        int tipPercentage = sc.nextInt();
+        int taxPercentage = sc.nextInt();
+        
+        sc.close();
+        
+        double price = mealPrice + ((double)tipPercentage/100 * mealPrice) + ((double)taxPercentage/100 * mealPrice);
+        
+        int total = (int) Math.round(price);
+        
+        System.out.println("The final price of the meal is $" + total + ".");
     }
 }
