@@ -1,17 +1,26 @@
 
 public class Day24 {
 
-	static Node removeDuplicates(Node head) {
-        Node current = head;
-        
-        while (current != null && current.next != null) {
-            while (current.next != null && current.data == current.next.data){
-                current.next = current.next.next;
-            }
-            current = current.next;
-        }
+public static Node removeDuplicates(Node head) {
+      //Write your code here
+  if(head == null){
+      return head;
+  }
+	else{
+		if(head.next != null){
+          		while( head.data == head.next.data){
+              			if(head.next.next != null){
+                  			head.next = head.next.next;
+              			}
+				else{
+                  			head.next = null;
+                  			break;
+              		}
 
-        return head;
-    }
-	
+          	}
+      	}
+      removeDuplicates(head.next);
+  }
+  return head;
 }
+
